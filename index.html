@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pencarian Film Berdasarkan Genre</title>
+	<style>
+		body { font-family: Arial; background: #f2f4f7; padding: 40px; }
+		h2 { color: #333; }
+		form {
+			background: white;
+			padding: 20px;
+			width: 420px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		}
+		select, input, button {
+			width: 100%;
+			padding: 8px;
+			margin: 8px 0;
+		}
+		button {
+			background: #333;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
+		table {
+			margin-top: 20px;
+			border-collapse: collapse;
+			width: 100%;
+			background: white;
+		}
+		th, td {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+		th {
+			background: #333;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+
+<h2>Pencarian Film Berdasarkan Genre</h2>
+
+<form action="/search" method="post">
+	<label>Genre</label>
+	<select name="genre">
+		<option>Romance</option>
+		<option>Horror</option>
+		<option>Action</option>
+		<option>Comedy</option>
+	</select>
+
+	<label>Metode</label>
+	<select name="method">
+		<option value="iterative">Iteratif</option>
+		<option value="recursive">Rekursif</option>
+	</select>
+
+	<label>Ukuran Masukan (n)</label>
+	<input type="number" name="n" value="10000" min="1" max="50000">
+
+	<button type="submit">Cari</button>
+</form>
+
+{{if .Result}}
+<h3>Hasil</h3>
+<p>
+Genre: <b>{{.Genre}}</b><br>
+Metode: <b>{{.Method}}</b><br>
+Ukuran Masukan (n): <b>{{.N}}</b><br>
+Waktu Eksekusi: <b>{{printf "%.3f" .Time}} ms</b><br>
+Jumlah Data Ditemukan: <b>{{len .Result}}</b>
+</p>
+
+<table>
+<tr>
+	<th>No</th>
+	<th>Judul Film</th>
+	<th>Genre</th>
+</tr>
+{{range $i, $f := .Result}}
+<tr>
+	<td>{{$i}}</td>
+	<td>{{$f.Title}}</td>
+	<td>{{$f.Genre}}</td>
+</tr>
+{{end}}
+</table>
+{{end}}
+
+</body>
+</html>
