@@ -55,7 +55,7 @@
 			border-radius: 14px;
 			padding: 28px;
 			box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-			margin-bottom: 30px;
+			margin-bottom: 20px;
 		}
 
 		label {
@@ -71,13 +71,13 @@
 			border-radius: 10px;
 			border: 1px solid rgba(255,255,255,0.15);
 			background: #1b1b1b;
-			color: #ffffff; /* FIX: TULISAN KELIHATAN */
+			color: #ffffff;
 			font-size: 14px;
 		}
 
 		select option {
 			background: #1b1b1b;
-			color: #ffffff; /* FIX OPTION PUTIH */
+			color: #ffffff;
 		}
 
 		select:focus, input:focus {
@@ -102,18 +102,18 @@
 			box-shadow: 0 0 20px rgba(255,59,59,0.5);
 		}
 
+		.note {
+			font-size: 12px;
+			color: #bbbbbb;
+			margin-top: 12px;
+		}
+
 		.result-box {
 			background: rgba(255,255,255,0.04);
 			border-radius: 14px;
 			padding: 22px;
 			margin-bottom: 24px;
 			border: 1px solid rgba(255,255,255,0.06);
-		}
-
-		.result-box p {
-			margin: 0;
-			line-height: 1.8;
-			font-size: 14px;
 		}
 
 		table {
@@ -148,15 +148,15 @@
 			margin-top: 40px;
 			font-size: 12px;
 			color: #aaaaaa;
-			letter-spacing: 0.5px;
 		}
 	</style>
 </head>
-<body>
 
+<body>
 <div class="container">
-	<h1>CINEMA FILM SEARCH🍿🎥✮⋆˙</h1>
-	<h2>Perbandingan Algoritma Iteratif dan Rekursif</h2>
+
+	<h1>CINEMA FILM SEARCH 🍿🎥</h1>
+	<h2>Perbandingan Algoritma Linear Search Iteratif dan Rekursif</h2>
 
 	<div class="banner">
 		<img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200" alt="Cinema">
@@ -182,6 +182,10 @@
 
 		<button type="submit">Cari Film</button>
 	</form>
+
+	<p class="note">
+		Catatan: Ukuran masukan (n) menunjukkan jumlah data film yang diproses oleh algoritma, sedangkan jumlah film yang ditampilkan merupakan hasil pencarian sesuai genre yang ditemukan.
+	</p>
 
 	{{if .Result}}
 	<div class="result-box">
@@ -211,9 +215,9 @@
 	{{end}}
 
 	<div class="footer">
-		TUBES AKA KELOMPOK 10 IF-04-01
+		TUBES AKA – KELOMPOK 10 IF-04-01
 	</div>
-</div>
 
+</div>
 </body>
 </html>
